@@ -1,7 +1,6 @@
 import { EntityManager } from "typeorm";
-import { Register } from "../entities/Register";
+import { Register } from "../entities/Register";;
 ;
-
 export class RegisterService {
     private manager: EntityManager
 
@@ -11,12 +10,20 @@ export class RegisterService {
         this.manager = manager;
     }
 
-    createRegister = async (register: Register) => {
-        return this.manager.save(register)
+    createRegister = async (register: Register): Promise<Register> => {
+        try{
+           return this.manager.save(Register, register)
+        } catch (error) {
+            return error
+        }
     }
 
     getAllRegisters = async (): Promise<Register[] | null> => {
-        return this.manager.find(Register, {})
+        try {
+            return await this.manager.find(Register, {})
+        } catch (error) {
+            return error
+        }
     }
 
     getRegisterByNumber = async (number: string): Promise<Register | null> => {

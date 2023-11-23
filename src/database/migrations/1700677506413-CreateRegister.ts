@@ -9,8 +9,8 @@ export class CreateRegister1700677506413 implements MigrationInterface {
                 columns: [
                     {
                         name: "id",
-                        type: "uuid",
-                        isPrimary: true
+                        type: "varchar",
+                        isPrimary: true,
                     },
                     {
                         name: "number",
@@ -54,11 +54,23 @@ export class CreateRegister1700677506413 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
+                        name: "motive",
+                        type: "varchar",
+                    },
+                    {
                         name: "observations",
                         type: "varchar",
                     },
                     {
                         name: "supervisorObservations",
+                        type: "varchar",
+                    },
+                    {
+                        name: "sniperObservations",
+                        type: "varchar",
+                    },
+                    {
+                        name: "finalObservations",
                         type: "varchar",
                     },
                     {

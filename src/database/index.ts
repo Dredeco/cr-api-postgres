@@ -1,6 +1,5 @@
 import { DataSource } from "typeorm"
 import { Register } from "../entities/Register"
-import { Users } from "../entities/User"
 
 export const AppDataSource = new DataSource({
     type: "postgres",
@@ -13,7 +12,6 @@ export const AppDataSource = new DataSource({
     ],
     entities: [
         Register,
-        Users
     ]
 })
 

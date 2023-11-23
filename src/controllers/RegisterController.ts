@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { RegisterService } from "../services/RegisterService";
 import { AppDataSource } from "../database";
 import { Register } from "../entities/Register";
+import { randomUUID } from 'crypto'
 
 export class RegisterController {
     registerService: RegisterService
@@ -15,12 +16,14 @@ export class RegisterController {
     createRegister = async (req: Request, res: Response) => {
         const register: Register = req.body;
         const findRegister = await this.registerService.getRegisterByNumber(register.number)
-
+        
         if(findRegister) {
             return res.status(400).json({message: 'Bad Request - O chamado já existe'})
         }
-
-        this.registerService.createRegister(register)
+        
+        register.id = randomUUID()
+        await this.registerService.createRegister(register)
+        return res.status(200).json({message: `Registro cadastrado: ${register.number}`})
     }
 
     getAllRegisters = async (req: Request, res: Response) => {

@@ -1,5 +1,4 @@
-import { Entity, PrimaryColumn, Column } from "typeorm";
-import {randomUUID} from 'crypto'
+import { Entity, Column, PrimaryGeneratedColumn, PrimaryColumn, PrimaryColumnCannotBeNullableError } from "typeorm";
 
 @Entity("registers")
 export class Register {
@@ -35,12 +34,21 @@ export class Register {
 
     @Column()
     fixProc: string;
+    
+    @Column()
+    motive: string;
 
     @Column()
     observations: string;
 
     @Column()
     supervisorObservations: string;
+
+    @Column()
+    sniperObservations: string;
+
+    @Column()
+    finalObservations: string;
 
     @Column()
     createdAt: Date;
@@ -57,11 +65,14 @@ export class Register {
         classification: string,
         system: string,
         fixProc: string,
+        motive: string,
         observations: string,
         supervisorObservations: string,
+        sniperObservations: string,
+        finalObservations: string,
         createdAt: Date
     ){
-        this.id = randomUUID(),
+        this.id = id,
         this.number = number,
         this.task = task,
         this.sctask = sctask,
@@ -72,8 +83,11 @@ export class Register {
         this.classification = classification,
         this.system = system,
         this.fixProc = fixProc,
+        this.motive = motive,
         this.observations = observations,
-        this.supervisorObservations = supervisorObservations
+        this.supervisorObservations = supervisorObservations,
+        this.sniperObservations = sniperObservations,
+        this.finalObservations = finalObservations,
         this.createdAt = createdAt
     }
 }
