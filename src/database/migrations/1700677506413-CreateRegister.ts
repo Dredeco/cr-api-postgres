@@ -50,7 +50,7 @@ export class CreateRegister1700677506413 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
-                        name: "fixArticle",
+                        name: "fixProc",
                         type: "varchar",
                     },
                     {

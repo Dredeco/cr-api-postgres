@@ -28,7 +28,7 @@ export class Register {
     supervisor: string;
 
     @Column()
-    classificarion: string;
+    classification: string;
 
     @Column()
     system: string;
@@ -69,7 +69,7 @@ export class Register {
         this.user = user,
         this.team = team,
         this.supervisor = supervisor,
-        this.classificarion = classification,
+        this.classification = classification,
         this.system = system,
         this.fixProc = fixProc,
         this.observations = observations,
