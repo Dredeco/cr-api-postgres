@@ -22,13 +22,17 @@ export class RegisterController {
         }
         
         register.id = randomUUID()
+        register.supervisorObservations = '',
+        register.sniperObservations = '',
+        register.finalObservations = '',
+        
+        console.log(register)
         await this.registerService.createRegister(register)
         return res.status(200).json({message: `Registro cadastrado: ${register.number}`})
     }
 
     getAllRegisters = async (req: Request, res: Response) => {
         const registers = await this.registerService.getAllRegisters()
-
         return res.status(200).json({registers})
     }
 }
