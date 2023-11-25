@@ -28,11 +28,20 @@ export class RegisterController {
         
         console.log(register)
         await this.registerService.createRegister(register)
-        return res.status(200).json({message: `Registro cadastrado: ${register.number}`})
+        return res.status(201).json({message: `Registro criado: ${register.number}`})
     }
 
     getAllRegisters = async (req: Request, res: Response) => {
         const registers = await this.registerService.getAllRegisters()
         return res.status(200).json({registers})
     }
+
+    updateRegister = async (req: Request, res: Response) => {
+        const registerNumber = req.params.number
+        const register = req.body
+        await this.registerService.updateRegister(registerNumber, register)
+        return res.status(202).json({message: "Chamado atualizado.." + register.number})
+    }
+
+    
 }

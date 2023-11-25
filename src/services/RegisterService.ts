@@ -42,26 +42,32 @@ export class RegisterService {
         })
     }
 
-    updateRegister = async (register: Register): Promise<Register | null> => {
+    updateRegister = async (registerNumber: string, register: Register): Promise<Register | null> => {
+        let updatedRegister = {
+            number: register.number,
+            task: register.task,
+            sctask: register.sctask,
+            date: register.date,
+            user: register.user,
+            team: register.team,
+            supervisor: register.supervisor,
+            classification: register.classification,
+            system: register.system,
+            motive: register.motive,
+            fixProc: register.fixProc,
+            observations: register.observations,
+            supervisorObservations: register.supervisorObservations,
+            sniperObservations: register.sniperObservations,
+            finalObservations: register.finalObservations
+        }
+        
         let response = await this.manager.update(
             Register, 
-            {number: register.number}, 
-            {
-                number: register.number,
-                task: register.task,
-                sctask: register.sctask,
-                date: register.date,
-                user: register.user,
-                team: register.team,
-                supervisor: register.supervisor,
-                classification: register.classification,
-                system: register.system,
-                fixProc: register.fixProc,
-                observations: register.observations,
-                supervisorObservations: register.supervisorObservations
-            }
-        ).then((res) => response)
+            {number: `${registerNumber}`}, 
+            updatedRegister
+        )
 
-        return response;
+        console.log(response);
+        return
     }
 }

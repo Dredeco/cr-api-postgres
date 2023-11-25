@@ -10,4 +10,4 @@ router.get("/register/:number")
 router.get("/register/:user")
 
 router.post("/register", registerController.createRegister)
-router.patch("/register/:number")
+router.patch("/register/:number", registerController.updateRegister)
