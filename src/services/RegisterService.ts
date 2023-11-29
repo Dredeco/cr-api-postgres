@@ -26,48 +26,49 @@ export class RegisterService {
         }
     }
 
-    getRegisterByNumber = async (number: string): Promise<Register | null> => {
+    getAllRegistersNumbers =  async (): Promise<any | null> => {
+        try {
+            return await this.manager.find(Register, { select: { numero: true }})
+        } catch (error) {
+            return error
+        }
+    }
+
+    getRegisterByNumber = async (numero: string): Promise<Register | null> => {
         return this.manager.findOne(Register, {
             where: {
-                number: number,
+                numero: numero,
             }
         })
     }
 
-    getRegisterByUser = async (user: string): Promise<Register | null> => {
+    getRegisterByUser = async (analista: string): Promise<Register | null> => {
         return this.manager.findOne(Register, {
             where: {
-                user: user,
+                analista: analista,
             }
         })
     }
 
-    updateRegister = async (registerNumber: string, register: Register): Promise<Register | null> => {
+    updateRegister = async (registerNumber: string, register: Register): Promise<any> => {
         let updatedRegister = {
-            number: register.number,
-            task: register.task,
-            sctask: register.sctask,
-            date: register.date,
-            user: register.user,
-            team: register.team,
-            supervisor: register.supervisor,
-            classification: register.classification,
-            system: register.system,
-            motive: register.motive,
-            fixProc: register.fixProc,
-            observations: register.observations,
-            supervisorObservations: register.supervisorObservations,
-            sniperObservations: register.sniperObservations,
-            finalObservations: register.finalObservations
+            classificacao: register.classificacao,
+            sistema: register.sistema,
+            motivo: register.motivo,
+            corrigirArtigo: register.corrigirArtigo,
+            justificativa: register.justificativa,
+            analiseSupervisor: register.analiseSupervisor,
+            analiseSniper: register.analiseSniper,
+            analiseConclusao: register.analiseConclusao
         }
         
         let response = await this.manager.update(
             Register, 
-            {number: `${registerNumber}`}, 
+            {numero: `${registerNumber}`}, 
             updatedRegister
         )
 
-        console.log(response);
-        return
+        console.log(`Chamado atualizado: ${response}`);
+        return response
     }
 }

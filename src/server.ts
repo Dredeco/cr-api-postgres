@@ -6,8 +6,8 @@ import { router } from "./routes";
 const app = express();
 const cors = require ("cors")
 
-app.options("*", cors({ origin: 'http://localhost:3000', optionsSuccessStatus: 200 }));
-app.use(cors({ origin: "http://localhost:3000", optionsSuccessStatus: 200 }));
+app.options("*", cors({ origin: '*', optionsSuccessStatus: 200 }));
+app.use(cors({ origin: "*", optionsSuccessStatus: 200 }));
 
 app.use(express.json())
 app.use(router)

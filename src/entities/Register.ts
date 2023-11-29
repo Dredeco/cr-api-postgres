@@ -6,7 +6,7 @@ export class Register {
     id: string;
 
     @Column()
-    number: string;
+    numero: string;
 
     @Column()
     task: string;
@@ -15,79 +15,79 @@ export class Register {
     sctask: string;
 
     @Column()
-    date: Date;
+    data: Date;
 
     @Column()
-    user: string;
+    analista: string;
 
     @Column()
-    team: string;
+    equipe: string;
 
     @Column()
     supervisor: string;
 
     @Column()
-    classification: string;
+    classificacao: string;
 
     @Column()
-    system: string;
+    sistema: string;
 
     @Column()
-    fixProc: string;
+    corrigirArtigo: string;
     
     @Column()
-    motive: string;
+    motivo: string;
 
     @Column()
-    observations: string;
+    justificativa: string;
 
     @Column()
-    supervisorObservations: string;
+    analiseSupervisor: string;
 
     @Column()
-    sniperObservations: string;
+    analiseSniper: string;
 
     @Column()
-    finalObservations: string;
+    analiseConclusao: string;
 
     @Column()
-    createdAt: Date;
+    criadoEm: Date;
 
     constructor(
         id: string,
-        number: string,
+        numero: string,
         task: string,
         sctask: string,
-        date: Date,
-        user: string,
-        team: string,
+        data: Date,
+        analista: string,
+        equipe: string,
         supervisor: string,
-        classification: string,
-        system: string,
-        fixProc: string,
-        motive: string,
-        observations: string,
-        supervisorObservations: string,
-        sniperObservations: string,
-        finalObservations: string,
-        createdAt: Date
+        classificacao: string,
+        sistema: string,
+        corrigirArtigo: string,
+        motivo: string,
+        justificativa: string,
+        analiseSupervisor: string,
+        analiseSniper: string,
+        analiseConclusao: string,
+        criadoEm: Date
     ){
         this.id = id,
-        this.number = number,
+        this.numero = numero,
         this.task = task,
         this.sctask = sctask,
-        this.date = date,
-        this.user = user,
-        this.team = team,
+        this.data = data,
+        this.analista = analista,
+        this.equipe = equipe,
         this.supervisor = supervisor,
-        this.classification = classification,
-        this.system = system,
-        this.fixProc = fixProc,
-        this.motive = motive,
-        this.observations = observations,
-        this.supervisorObservations = supervisorObservations,
-        this.sniperObservations = sniperObservations,
-        this.finalObservations = finalObservations,
-        this.createdAt = createdAt
+        this.classificacao = classificacao,
+        this.sistema = sistema,
+        this.corrigirArtigo = corrigirArtigo,
+        this.motivo = motivo,
+        this.justificativa = justificativa,
+        this.analiseSupervisor = analiseSupervisor,
+        this.analiseSniper = analiseSniper,
+        this.analiseConclusao = analiseConclusao,
+        this.criadoEm = criadoEm
     }
 }

@@ -13,9 +13,8 @@ export class CreateRegister1700677506413 implements MigrationInterface {
                         isPrimary: true,
                     },
                     {
-                        name: "number",
+                        name: "numero",
                         type: "varchar",
-                        isUnique: true
                     },
                     {
                         name: "task",
@@ -26,15 +25,15 @@ export class CreateRegister1700677506413 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
-                        name: "date",
+                        name: "data",
                         type: "timestamp",
                     },
                     {
-                        name: "user",
+                        name: "analista",
                         type: "varchar",
                     },
                     {
-                        name: "team",
+                        name: "equipe",
                         type: "varchar",
                     },
                     {
@@ -42,39 +41,39 @@ export class CreateRegister1700677506413 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
-                        name: "classification",
+                        name: "classificacao",
                         type: "varchar",
                     },
                     {
-                        name: "system",
+                        name: "sistema",
                         type: "varchar",
                     },
                     {
-                        name: "fixProc",
+                        name: "corrigirArtigo",
                         type: "varchar",
                     },
                     {
-                        name: "motive",
+                        name: "motivo",
                         type: "varchar",
                     },
                     {
-                        name: "observations",
+                        name: "justificativa",
                         type: "varchar",
                     },
                     {
-                        name: "supervisorObservations",
+                        name: "analiseSupervisor",
                         type: "varchar",
                     },
                     {
-                        name: "sniperObservations",
+                        name: "analiseSniper",
                         type: "varchar",
                     },
                     {
-                        name: "finalObservations",
+                        name: "analiseConclusao",
                         type: "varchar",
                     },
                     {
-                        name: 'createdAt',
+                        name: 'criadoEm',
                         type: "timestamp",
                         default: "now()"
                     }
