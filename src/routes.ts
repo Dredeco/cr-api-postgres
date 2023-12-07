@@ -1,14 +1,13 @@
 import { Router } from "express";
-import { RegisterController } from "./controllers/RegisterController";
+import { ChamadoController } from "./controllers/ChamadoController";
 
 export const router = Router()
 
-const registerController = new RegisterController()
+const registerController = new ChamadoController()
 
-router.get("/register", registerController.getAllRegisters)
-router.get("/register/number", registerController.getAllRegistersNumbers)
-router.get("/register/:number", registerController.getRegisterByNumber)
-router.get("/register/:user")
+router.get("/chamados", registerController.getAllRegisters)
+router.get("/chamados/numero", registerController.getAllRegistersNumbers)
+router.get("/chamados/:numero", registerController.getRegisterByNumber)
 
-router.post("/register", registerController.createRegister)
-router.patch("/register/:number", registerController.updateRegister)
+router.post("/chamados", registerController.createRegister)
+router.patch("/chamados/:numero", registerController.updateRegister)

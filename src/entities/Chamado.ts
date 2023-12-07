@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, PrimaryColumn, PrimaryColumnCannotBeNullableError } from "typeorm";
 
-@Entity("registers")
-export class Register {
+@Entity("chamados")
+export class Chamado {
     @PrimaryColumn()
     id: string;
 
@@ -16,6 +16,15 @@ export class Register {
 
     @Column()
     data: Date;
+
+    @Column()
+    mesaTarefa: string
+
+    @Column()
+    mesaChamado: string
+
+    @Column()
+    status: string
 
     @Column()
     analista: string;
@@ -59,6 +68,9 @@ export class Register {
         task: string,
         sctask: string,
         data: Date,
+        mesaTarefa: string,
+        mesaChamado: string,
+        status: string,
         analista: string,
         equipe: string,
         supervisor: string,
@@ -77,6 +89,9 @@ export class Register {
         this.task = task,
         this.sctask = sctask,
         this.data = data,
+        this.mesaTarefa = mesaTarefa,
+        this.mesaChamado = mesaChamado,
+        this.status = status,
         this.analista = analista,
         this.equipe = equipe,
         this.supervisor = supervisor,

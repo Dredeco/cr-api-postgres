@@ -5,7 +5,7 @@ export class CreateRegister1700677506413 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: "registers",
+                name: "chamados",
                 columns: [
                     {
                         name: "id",
@@ -27,6 +27,18 @@ export class CreateRegister1700677506413 implements MigrationInterface {
                     {
                         name: "data",
                         type: "timestamp",
+                    },
+                    {
+                        name: "status",
+                        type: "varchar",
+                    },
+                    {
+                        name: "mesaTarefa",
+                        type: "varchar",
+                    },
+                    {
+                        name: "mesaChamado",
+                        type: "varchar",
                     },
                     {
                         name: "analista",
@@ -83,7 +95,7 @@ export class CreateRegister1700677506413 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("registers")
+        await queryRunner.dropTable("chamados")
     }
 
 }
