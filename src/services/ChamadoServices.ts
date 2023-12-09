@@ -12,7 +12,7 @@ export class ChamadoServices {
 
     createRegister = async (register: Chamado): Promise<Chamado> => {
         try{
-           return this.manager.save(Chamado, register)
+            return this.manager.save(Chamado, register)
         } catch (error) {
             return error
         }

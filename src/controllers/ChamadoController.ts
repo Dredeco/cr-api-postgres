@@ -27,7 +27,6 @@ export class ChamadoController {
         chamado.analiseConclusao = '',
         chamado.corrigirArtigo = ''
         
-        console.log(chamado)
         await this.chamadoServicos.createRegister(chamado)
         return res.status(201).json({message: `Registro criado: ${chamado.numero}`})
     }
