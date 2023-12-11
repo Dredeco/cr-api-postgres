@@ -13,8 +13,9 @@ export class CreateRegister1700677506413 implements MigrationInterface {
                         isPrimary: true,
                     },
                     {
-                        name: "numero",
+                        name: "numero_chamado",
                         type: "varchar",
+                        isUnique: false
                     },
                     {
                         name: "task",
@@ -25,31 +26,11 @@ export class CreateRegister1700677506413 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
-                        name: "data",
-                        type: "timestamp",
-                    },
-                    {
-                        name: "status",
-                        type: "varchar",
-                    },
-                    {
-                        name: "mesaTarefa",
-                        type: "varchar",
-                    },
-                    {
-                        name: "mesaChamado",
-                        type: "varchar",
-                    },
-                    {
-                        name: "analista",
+                        name: "analista_task",
                         type: "varchar",
                     },
                     {
                         name: "equipe",
-                        type: "varchar",
-                    },
-                    {
-                        name: "supervisor",
                         type: "varchar",
                     },
                     {
@@ -61,10 +42,6 @@ export class CreateRegister1700677506413 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
-                        name: "corrigirArtigo",
-                        type: "varchar",
-                    },
-                    {
                         name: "motivo",
                         type: "varchar",
                     },
@@ -73,15 +50,31 @@ export class CreateRegister1700677506413 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
-                        name: "analiseSupervisor",
+                        name: "analise_supervisor",
                         type: "varchar",
                     },
                     {
-                        name: "analiseSniper",
+                        name: "analise_sniper",
                         type: "varchar",
                     },
                     {
-                        name: "analiseConclusao",
+                        name: "analise_conclusao",
+                        type: "varchar",
+                    },
+                    {
+                        name: "nome_artigo",
+                        type: "varchar",
+                    },
+                    {
+                        name: "solicitacao_artigo",
+                        type: "varchar",
+                    },
+                    {
+                        name: "validacao_artigo",
+                        type: "varchar",
+                    },
+                    {
+                        name: "justificativa_artigo",
                         type: "varchar",
                     },
                     {

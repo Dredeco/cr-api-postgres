@@ -15,20 +15,16 @@ export class ChamadoController {
 
     createRegister = async (req: Request, res: Response) => {
         const chamado: Chamado = req.body;
-        const findRegister = await this.chamadoServicos.getRegisterByNumber(chamado.numero)
+        const findRegister = await this.chamadoServicos.getRegisterByNumber(chamado.numero_chamado)
         
         if(findRegister) {
             return res.status(400).json({message: 'Bad Request - O chamado já existe'})
         }
         
         chamado.id = randomUUID()
-        chamado.analiseSupervisor = '',
-        chamado.analiseSniper = '',
-        chamado.analiseConclusao = '',
-        chamado.corrigirArtigo = ''
         
         await this.chamadoServicos.createRegister(chamado)
-        return res.status(201).json({message: `Registro criado: ${chamado.numero}`})
+        return res.status(201).json({message: `Registro criado: ${chamado.numero_chamado}`})
     }
 
     getAllRegisters = async (req: Request, res: Response) => {

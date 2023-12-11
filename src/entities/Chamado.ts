@@ -6,7 +6,7 @@ export class Chamado {
     id: string;
 
     @Column()
-    numero: string;
+    numero_chamado: string;
 
     @Column()
     task: string;
@@ -15,34 +15,16 @@ export class Chamado {
     sctask: string;
 
     @Column()
-    data: Date;
-
-    @Column()
-    mesaTarefa: string
-
-    @Column()
-    mesaChamado: string
-
-    @Column()
-    status: string
-
-    @Column()
-    analista: string;
+    analista_task: string;
 
     @Column()
     equipe: string;
-
-    @Column()
-    supervisor: string;
 
     @Column()
     classificacao: string;
 
     @Column()
     sistema: string;
-
-    @Column()
-    corrigirArtigo: string;
     
     @Column()
     motivo: string;
@@ -51,58 +33,66 @@ export class Chamado {
     justificativa: string;
 
     @Column()
-    analiseSupervisor: string;
+    analise_supervisor: string;
 
     @Column()
-    analiseSniper: string;
+    analise_sniper: string;
 
     @Column()
-    analiseConclusao: string;
+    analise_conclusao: string;
+
+    @Column()
+    nome_artigo: string;
+
+    @Column()
+    solicitacao_artigo: string;
+
+    @Column()
+    validacao_artigo: string;
+
+    @Column()
+    justificativa_artigo: string;
 
     @Column()
     criadoEm: Date;
 
     constructor(
         id: string,
-        numero: string,
+        numero_chamado: string,
         task: string,
         sctask: string,
-        data: Date,
-        mesaTarefa: string,
-        mesaChamado: string,
-        status: string,
-        analista: string,
+        analista_task: string,
         equipe: string,
-        supervisor: string,
         classificacao: string,
         sistema: string,
-        corrigirArtigo: string,
         motivo: string,
         justificativa: string,
-        analiseSupervisor: string,
-        analiseSniper: string,
-        analiseConclusao: string,
-        criadoEm: Date
+        analise_supervisor: string,
+        analise_sniper: string,
+        analise_conclusao: string,
+        criadoEm: Date,
+        nome_artigo: string,
+        solicitacao_artigo: string,
+        validacao_artigo: string,
+        justificativa_artigo: string
     ){
         this.id = id,
-        this.numero = numero,
+        this.numero_chamado = numero_chamado,
         this.task = task,
         this.sctask = sctask,
-        this.data = data,
-        this.mesaTarefa = mesaTarefa,
-        this.mesaChamado = mesaChamado,
-        this.status = status,
-        this.analista = analista,
+        this.analista_task = analista_task,
         this.equipe = equipe,
-        this.supervisor = supervisor,
         this.classificacao = classificacao,
         this.sistema = sistema,
-        this.corrigirArtigo = corrigirArtigo,
         this.motivo = motivo,
         this.justificativa = justificativa,
-        this.analiseSupervisor = analiseSupervisor,
-        this.analiseSniper = analiseSniper,
-        this.analiseConclusao = analiseConclusao,
+        this.analise_supervisor = analise_supervisor,
+        this.analise_sniper = analise_sniper,
+        this.analise_conclusao = analise_conclusao,
+        this.nome_artigo = nome_artigo,
+        this.solicitacao_artigo = solicitacao_artigo,
+        this.validacao_artigo = validacao_artigo,
+        this.justificativa_artigo = justificativa_artigo,
         this.criadoEm = criadoEm
     }
 }

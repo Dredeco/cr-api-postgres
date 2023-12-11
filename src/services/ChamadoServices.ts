@@ -28,7 +28,7 @@ export class ChamadoServices {
 
     getAllRegistersNumbers =  async (): Promise<any | null> => {
         try {
-            return await this.manager.find(Chamado, { select: { numero: true }})
+            return await this.manager.find(Chamado, { select: { numero_chamado: true }})
         } catch (error) {
             return error
         }
@@ -37,7 +37,7 @@ export class ChamadoServices {
     getRegisterByNumber = async (numero: string): Promise<Chamado | null> => {
         return this.manager.findOne(Chamado, {
             where: {
-                numero: numero,
+                numero_chamado: numero,
             }
         })
     }
@@ -45,35 +45,29 @@ export class ChamadoServices {
     getRegisterByUser = async (analista: string): Promise<Chamado | null> => {
         return this.manager.findOne(Chamado, {
             where: {
-                analista: analista,
+                analista_task: analista,
             }
         })
     }
 
     updateRegister = async (numeroChamado: string, chamado: Chamado): Promise<any> => {
         let updatedRegister = {
-            numero: chamado.numero,
+            numero_chamado: chamado.numero_chamado,
             task: chamado.task,
             sctask: chamado.sctask,
-            data: chamado.data,
-            mesaTarefa: chamado.mesaTarefa,
-            mesaChamado: chamado.mesaChamado,
-            status: chamado.status,
-            analista: chamado.analista,
+            analista_task: chamado.analista_task,
             equipe: chamado.equipe,
-            supervisor: chamado.supervisor,
             classificacao: chamado.classificacao,
             sistema: chamado.sistema,
-            corrigirArtigo: chamado.corrigirArtigo,
             justificativa: chamado.justificativa,
-            analiseSupervisor: chamado.analiseSupervisor,
-            analiseSniper: chamado.analiseSniper,
-            analiseConclusao: chamado.analiseConclusao
+            analise_supervisor: chamado.analise_supervisor,
+            analise_sniper: chamado.analise_sniper,
+            analise_conclusao: chamado.analise_conclusao
         }
         
         let response = await this.manager.update(
             Chamado, 
-            {numero: `${chamado.numero}`}, 
+            {numero_chamado: `${chamado.numero_chamado}`}, 
             updatedRegister
         )
 
