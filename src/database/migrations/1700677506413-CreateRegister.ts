@@ -88,7 +88,7 @@ export class CreateRegister1700677506413 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("chamados")
+        await queryRunner.dropTable("registers")
     }
 
 }
