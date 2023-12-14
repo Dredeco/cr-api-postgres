@@ -45,30 +45,34 @@ export class ChamadoServices {
     getRegisterByUser = async (analista: string): Promise<Chamado | null> => {
         return this.manager.findOne(Chamado, {
             where: {
-                analista_task: analista,
+                analista_chamado: analista,
             }
         })
     }
 
     updateRegister = async (numeroChamado: string, chamado: Chamado): Promise<any> => {
         let updatedRegister = {
+            id: chamado.id,
             numero_chamado: chamado.numero_chamado,
-            task: chamado.task,
-            sctask: chamado.sctask,
-            analista_task: chamado.analista_task,
-            equipe: chamado.equipe,
+            tarefas: chamado.tarefas,
+            analista_chamado: chamado.analista_chamado,
+            equipe_chamado: chamado.equipe_chamado,
             classificacao: chamado.classificacao,
             sistema: chamado.sistema,
-            justificativa: chamado.justificativa,
+            motivo: chamado.motivo,
+            justificativa_chamado: chamado.justificativa_chamado,
             analise_supervisor: chamado.analise_supervisor,
             analise_sniper: chamado.analise_sniper,
-            analise_conclusao: chamado.analise_conclusao
+            analise_conclusao: chamado.analise_conclusao,
+            nome_artigo: chamado.nome_artigo,
+            solicitacao_artigo: chamado.solicitacao_artigo,
+            validacao_artigo: chamado.validacao_artigo,
+            justificativa_artigo: chamado.justificativa_artigo
         }
         
-        let response = await this.manager.update(
+        let response = await this.manager.save(
             Chamado, 
-            {numero_chamado: `${chamado.numero_chamado}`}, 
-            updatedRegister
+            updatedRegister,
         )
 
         console.log(`Chamado atualizado: ${response}`);

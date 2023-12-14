@@ -1,8 +1,9 @@
+import { randomUUID } from 'crypto';
 import { Request, Response } from "express";
 import { ChamadoServices } from "../services/ChamadoServices";
 import { AppDataSource } from "../database";
 import { Chamado } from "../entities/Chamado";
-import { randomUUID } from 'crypto'
+
 
 export class ChamadoController {
     chamadoServicos: ChamadoServices
@@ -20,7 +21,7 @@ export class ChamadoController {
         if(findRegister) {
             return res.status(400).json({message: 'Bad Request - O chamado já existe'})
         }
-        
+
         chamado.id = randomUUID()
         
         await this.chamadoServicos.createRegister(chamado)

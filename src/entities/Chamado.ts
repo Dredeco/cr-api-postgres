@@ -1,24 +1,25 @@
-import { Entity, Column, PrimaryGeneratedColumn, PrimaryColumn, PrimaryColumnCannotBeNullableError } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { Tarefa } from "./Tarefa";
 
 @Entity("chamados")
 export class Chamado {
-    @PrimaryColumn()
+    @PrimaryGeneratedColumn("uuid")
     id: string;
 
     @Column()
     numero_chamado: string;
+    
+    @Column("int", {array: true})
+    tarefas: Tarefa[]
 
     @Column()
-    task: string;
+    analista_chamado: string;
 
     @Column()
-    sctask: string;
+    equipe_chamado: string;
 
     @Column()
-    analista_task: string;
-
-    @Column()
-    equipe: string;
+    data_chamado: Date;
 
     @Column()
     classificacao: string;
@@ -30,7 +31,7 @@ export class Chamado {
     motivo: string;
 
     @Column()
-    justificativa: string;
+    justificativa_chamado: string;
 
     @Column()
     analise_supervisor: string;
@@ -59,14 +60,14 @@ export class Chamado {
     constructor(
         id: string,
         numero_chamado: string,
-        task: string,
-        sctask: string,
-        analista_task: string,
-        equipe: string,
+        tarefas: Tarefa[],
+        analista_chamado: string,
+        equipe_chamado: string,
+        data_chamado: Date,
         classificacao: string,
         sistema: string,
         motivo: string,
-        justificativa: string,
+        justificativa_chamado: string,
         analise_supervisor: string,
         analise_sniper: string,
         analise_conclusao: string,
@@ -78,14 +79,14 @@ export class Chamado {
     ){
         this.id = id,
         this.numero_chamado = numero_chamado,
-        this.task = task,
-        this.sctask = sctask,
-        this.analista_task = analista_task,
-        this.equipe = equipe,
+        this.tarefas = tarefas,
+        this.analista_chamado = analista_chamado,
+        this.equipe_chamado = equipe_chamado,
+        this.data_chamado = data_chamado,
         this.classificacao = classificacao,
         this.sistema = sistema,
         this.motivo = motivo,
-        this.justificativa = justificativa,
+        this.justificativa_chamado = justificativa_chamado,
         this.analise_supervisor = analise_supervisor,
         this.analise_sniper = analise_sniper,
         this.analise_conclusao = analise_conclusao,
