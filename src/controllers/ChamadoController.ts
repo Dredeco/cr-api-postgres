@@ -4,7 +4,6 @@ import { ChamadoServices } from "../services/ChamadoServices";
 import { AppDataSource } from "../database";
 import { Chamado } from "../entities/Chamado";
 
-
 export class ChamadoController {
     chamadoServicos: ChamadoServices
 

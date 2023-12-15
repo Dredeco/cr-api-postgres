@@ -35,28 +35,22 @@ export class Chamado1702576467578 implements MigrationInterface {
                         type: "timestamp",
                     },
                     {
-                        name: "classificacao",
-                        type: "varchar",
-                    },
-                    {
-                        name: "sistema",
-                        type: "varchar",
-                    },
-                    {
-                        name: "motivo",
-                        type: "varchar",
-                    },
-                    {
-                        name: "justificativa_chamado",
-                        type: "varchar",
-                    },
-                    {
-                        name: "analise_supervisor",
+                        name: "n1_resolveria",
                         type: "varchar",
                         isNullable: true
                     },
                     {
                         name: "analise_sniper",
+                        type: "varchar",
+                        isNullable: true
+                    },
+                    {
+                        name: "repasse_indevido",
+                        type: "varchar",
+                        isNullable: true
+                    },
+                    {
+                        name: "analise_supervisor",
                         type: "varchar",
                         isNullable: true
                     },

@@ -22,22 +22,16 @@ export class Chamado {
     data_chamado: Date;
 
     @Column()
-    classificacao: string;
-
-    @Column()
-    sistema: string;
-    
-    @Column()
-    motivo: string;
-
-    @Column()
-    justificativa_chamado: string;
+    n1_resolveria: string;
 
     @Column()
     analise_supervisor: string;
 
     @Column()
     analise_sniper: string;
+
+    @Column()
+    repasse_indevido: string
 
     @Column()
     analise_conclusao: string;
@@ -64,12 +58,10 @@ export class Chamado {
         analista_chamado: string,
         equipe_chamado: string,
         data_chamado: Date,
-        classificacao: string,
-        sistema: string,
-        motivo: string,
-        justificativa_chamado: string,
+        n1_resolveria: string,
         analise_supervisor: string,
         analise_sniper: string,
+        repasse_indevido: string,
         analise_conclusao: string,
         criadoEm: Date,
         nome_artigo: string,
@@ -83,12 +75,10 @@ export class Chamado {
         this.analista_chamado = analista_chamado,
         this.equipe_chamado = equipe_chamado,
         this.data_chamado = data_chamado,
-        this.classificacao = classificacao,
-        this.sistema = sistema,
-        this.motivo = motivo,
-        this.justificativa_chamado = justificativa_chamado,
+        this.n1_resolveria = n1_resolveria,
         this.analise_supervisor = analise_supervisor,
         this.analise_sniper = analise_sniper,
+        this.repasse_indevido = repasse_indevido,
         this.analise_conclusao = analise_conclusao,
         this.nome_artigo = nome_artigo,
         this.solicitacao_artigo = solicitacao_artigo,

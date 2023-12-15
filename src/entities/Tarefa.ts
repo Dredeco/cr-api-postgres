@@ -18,6 +18,15 @@ export class Tarefa {
     equipe_task: string;
 
     @Column()
+    classificacao_task: string;
+
+    @Column()
+    sistema_task: string;
+
+    @Column()
+    motivo_task: string;
+
+    @Column()
     justificativa_task: string;
 
     @Column()
@@ -35,6 +44,9 @@ export class Tarefa {
         tarefa: string,
         analista_task: string,
         equipe_task: string,
+        classificacao_task: string,
+        sistema_task: string,
+        motivo_task: string,
         data_task: string,
         mesa_task: string,
         justificativa_task: string,
@@ -45,6 +57,9 @@ export class Tarefa {
         this.numero_chamado = numero_chamado,
         this.analista_task = analista_task,
         this.equipe_task = equipe_task,
+        this.classificacao_task = classificacao_task,
+        this.sistema_task = sistema_task,
+        this.motivo_task = motivo_task,
         this.data_task = data_task,
         this.mesa_task = mesa_task,
         this.justificativa_task = justificativa_task,

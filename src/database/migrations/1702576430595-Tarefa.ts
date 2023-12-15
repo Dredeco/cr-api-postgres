@@ -30,6 +30,18 @@ export class Tarefa1702576430595 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
+                        name: "classificacao_task",
+                        type: "varchar",
+                    },
+                    {
+                        name: "sistema_task",
+                        type: "varchar",
+                    },
+                    {
+                        name: "motivo_task",
+                        type: "varchar",
+                    },
+                    {
                         name: "data_task",
                         type: "timestamp",
                     },
