@@ -31,6 +31,14 @@ export class Chamado1702576467578 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
+                        name: "grupo_spoc",
+                        type: "varchar",
+                    },
+                    {
+                        name: "spoc_designado",
+                        type: "varchar",
+                    },
+                    {
                         name: "data_chamado",
                         type: "timestamp",
                     },
@@ -38,6 +46,22 @@ export class Chamado1702576467578 implements MigrationInterface {
                         name: "n1_resolveria",
                         type: "varchar",
                         isNullable: true
+                    },
+                    {
+                        name: "motivo_chamado",
+                        type: "varchar",
+                    },
+                    {
+                        name: "classificacao_chamado",
+                        type: "varchar",
+                    },
+                    {
+                        name: "justificativa_chamado",
+                        type: "varchar",
+                    },
+                    {
+                        name: "sistema_chamado",
+                        type: "varchar",
                     },
                     {
                         name: "analise_sniper",
@@ -51,6 +75,11 @@ export class Chamado1702576467578 implements MigrationInterface {
                     },
                     {
                         name: "analise_supervisor",
+                        type: "varchar",
+                        isNullable: true
+                    },
+                    {
+                        name: "analise_spoc",
                         type: "varchar",
                         isNullable: true
                     },
