@@ -20,7 +20,8 @@ export class Chamado1702576467578 implements MigrationInterface {
                     {
                         name: "tarefas",
                         type: "varchar",
-                        isArray: true
+                        isArray: true,
+                        isNullable: true
                     },
                     {
                         name: "analista_chamado",
@@ -28,14 +29,6 @@ export class Chamado1702576467578 implements MigrationInterface {
                     },
                     {
                         name: "equipe_chamado",
-                        type: "varchar",
-                    },
-                    {
-                        name: "grupo_spoc",
-                        type: "varchar",
-                    },
-                    {
-                        name: "spoc_designado",
                         type: "varchar",
                     },
                     {
@@ -75,11 +68,6 @@ export class Chamado1702576467578 implements MigrationInterface {
                     },
                     {
                         name: "analise_supervisor",
-                        type: "varchar",
-                        isNullable: true
-                    },
-                    {
-                        name: "analise_spoc",
                         type: "varchar",
                         isNullable: true
                     },

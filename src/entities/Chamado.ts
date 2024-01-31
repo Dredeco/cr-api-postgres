@@ -19,15 +19,6 @@ export class Chamado {
     equipe_chamado: string;
 
     @Column()
-    grupo_spoc: string;
-
-    @Column()
-    spoc_designado: string;
-
-    @Column()
-    analise_spoc: string;
-
-    @Column()
     data_chamado: Date;
 
     @Column()
@@ -78,8 +69,6 @@ export class Chamado {
         tarefas: Tarefa[],
         analista_chamado: string,
         equipe_chamado: string,
-        grupo_spoc: string,
-        spoc_designado: string,
         data_chamado: Date,
         n1_resolveria: string,
         motivo_chamado: string,
@@ -88,7 +77,6 @@ export class Chamado {
         justificativa_chamado: string,
         analise_supervisor: string,
         analise_sniper: string,
-        analise_spoc: string,
         repasse_indevido: string,
         analise_conclusao: string,
         criadoEm: Date,
@@ -102,15 +90,12 @@ export class Chamado {
         this.tarefas = tarefas,
         this.analista_chamado = analista_chamado,
         this.equipe_chamado = equipe_chamado,
-        this.grupo_spoc = grupo_spoc,
-        this.spoc_designado = spoc_designado,
         this.data_chamado = data_chamado,
         this.n1_resolveria = n1_resolveria,
         this.classificacao_chamado = classificacao_chamado,
         this.motivo_chamado = motivo_chamado,
         this.sistema_chamado = sistema_chamado,
         this.justificativa_chamado = justificativa_chamado,
-        this.analise_spoc = analise_spoc,
         this.analise_supervisor = analise_supervisor,
         this.analise_sniper = analise_sniper,
         this.repasse_indevido = repasse_indevido,

@@ -42,8 +42,8 @@ export class ChamadoServices {
         })
     }
 
-    getRegisterByUser = async (analista: string): Promise<Chamado | null> => {
-        return this.manager.findOne(Chamado, {
+    getRegisterByUser = async (analista: string): Promise<Chamado[] | null> => {
+        return this.manager.find(Chamado, {
             where: {
                 analista_chamado: analista,
             }
@@ -58,14 +58,11 @@ export class ChamadoServices {
             analista_chamado: chamado.analista_chamado,
             equipe_chamado: chamado.equipe_chamado,
             data_chamado: chamado.data_chamado,
-            grupo_spoc: chamado.grupo_spoc,
-            spoc_designado: chamado.spoc_designado,
             n1_resolveria: chamado.n1_resolveria,
             classificacao_chamado: chamado.classificacao_chamado,
             motivo_chamado: chamado.motivo_chamado,
             sistema_chamado: chamado.sistema_chamado,
             justificativa_chamado: chamado.justificativa_chamado,
-            analise_spoc: chamado.analise_spoc,
             analise_supervisor: chamado.analise_supervisor,
             analise_sniper: chamado.analise_sniper,
             repasse_indevido: chamado.repasse_indevido,

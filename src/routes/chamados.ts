@@ -13,6 +13,10 @@ router
     .get((req: Request, res: Response) => chamadoController.getAllRegistersNumbers(req, res))
 
 router
+    .route("/chamados/analista/:nome")
+    .get((req: Request, res: Response) => chamadoController.getRegisterByUser(req, res))
+
+router
     .route("/chamados/:numero")
     .get((req: Request, res: Response) => chamadoController.getRegisterByNumber(req, res))
 

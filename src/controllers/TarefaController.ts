@@ -49,6 +49,4 @@ export class TarefaController {
         await this.tarefaServices.updateTask(taskNumber, tasks)
         return res.status(202).json({message: "Tarefa atualizada:" + taskNumber})
     }
-
-    
 }
